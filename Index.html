@@ -1,0 +1,577 @@
+
+```html
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="egyptad.com — Premium Domain For Sale" />
+  <title>egyptad.com — Domain For Sale</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root{
+      --bg:#070A12;
+      --card:#0B1020;
+      --muted:#9AA4B2;
+      --text:#EAF0FF;
+      --line:rgba(255,255,255,.10);
+      --glow1:#5EE7FF;
+      --glow2:#8B5CFF;
+      --glow3:#32FF9A;
+      --shadow: 0 24px 60px rgba(0,0,0,.55);
+      --radius: 18px;
+    }
+
+    *{ box-sizing:border-box; }
+    html,body{ height:100%; }
+    body{
+      margin:0;
+      font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      color:var(--text);
+      background:
+        radial-gradient(1200px 700px at 15% 10%, rgba(94,231,255,.18), transparent 55%),
+        radial-gradient(1100px 650px at 85% 20%, rgba(139,92,255,.18), transparent 55%),
+        radial-gradient(900px 550px at 50% 95%, rgba(50,255,154,.12), transparent 50%),
+        linear-gradient(180deg, #050813 0%, #070A12 45%, #05060B 100%);
+      overflow-x:hidden;
+    }
+
+    /* Subtle animated grid */
+    .grid{
+      position:fixed;
+      inset:-2px;
+      background:
+        linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
+      background-size: 46px 46px;
+      mask-image: radial-gradient(900px 520px at 50% 22%, black 55%, transparent 100%);
+      opacity:.25;
+      pointer-events:none;
+      animation: drift 16s ease-in-out infinite;
+    }
+    @keyframes drift{
+      0%,100%{ transform: translate3d(0,0,0); }
+      50%{ transform: translate3d(12px, -10px, 0); }
+    }
+
+    .wrap{
+      position:relative;
+      min-height:100%;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      padding: 42px 18px 56px;
+    }
+
+    .shell{
+      width:min(1100px, 100%);
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      align-items:stretch;
+    }
+
+    @media (max-width: 980px){
+      .shell{ grid-template-columns: 1fr; }
+    }
+
+    /* Top bar */
+    .topbar{
+      grid-column: 1 / -1;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      padding: 14px 16px;
+      border:1px solid var(--line);
+      background: rgba(11,16,32,.62);
+      backdrop-filter: blur(10px);
+      border-radius: var(--radius);
+      box-shadow: 0 10px 28px rgba(0,0,0,.35);
+    }
+
+    .brand{
+      display:flex; align-items:center; gap:12px;
+    }
+    .logo{
+      width:38px; height:38px; border-radius:12px;
+      background:
+        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,0) 60%),
+        linear-gradient(135deg, rgba(94,231,255,.95), rgba(139,92,255,.95));
+      box-shadow: 0 10px 22px rgba(139,92,255,.25);
+      position:relative;
+      overflow:hidden;
+    }
+    .logo::after{
+      content:"";
+      position:absolute; inset:-40%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
+      transform: rotate(25deg);
+      animation: shine 4.8s ease-in-out infinite;
+      opacity:.65;
+    }
+    @keyframes shine{
+      0%,25%{ transform: translateX(-60%) rotate(25deg); }
+      55%,100%{ transform: translateX(60%) rotate(25deg); }
+    }
+
+    .brand h1{
+      margin:0;
+      font-size: 18px;
+      letter-spacing:.2px;
+      line-height:1.1;
+    }
+    .brand p{
+      margin:0;
+      color:var(--muted);
+      font-size: 12px;
+      line-height:1.1;
+    }
+
+    .pill{
+      display:flex; align-items:center; gap:8px;
+      padding: 9px 12px;
+      border-radius: 999px;
+      border:1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(234,240,255,.92);
+      font-size: 13px;
+      white-space:nowrap;
+    }
+    .dot{
+      width:10px; height:10px; border-radius:999px;
+      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.9), rgba(255,255,255,0) 60%),
+                  linear-gradient(180deg, var(--glow3), rgba(50,255,154,.25));
+      box-shadow: 0 0 18px rgba(50,255,154,.35);
+    }
+
+    /* Left hero card */
+    .hero{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(11,16,32,.68);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: 26px 22px;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero::before{
+      content:"";
+      position:absolute; inset:-2px;
+      background:
+        radial-gradient(480px 220px at 20% 20%, rgba(94,231,255,.18), transparent 60%),
+        radial-gradient(520px 260px at 80% 35%, rgba(139,92,255,.16), transparent 62%),
+        radial-gradient(620px 320px at 50% 110%, rgba(50,255,154,.10), transparent 60%);
+      pointer-events:none;
+      opacity:.9;
+    }
+
+    .hero .kicker{
+      position:relative;
+      display:inline-flex;
+      align-items:center;
+      gap:10px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,.12);
+      background: rgba(255,255,255,.04);
+      color: rgba(234,240,255,.92);
+      font-size: 13px;
+    }
+    .spark{
+      width:14px; height:14px; display:inline-block;
+      background: conic-gradient(from 180deg, var(--glow1), var(--glow2), var(--glow3), var(--glow1));
+      border-radius: 5px;
+      box-shadow: 0 0 16px rgba(94,231,255,.22);
+      transform: rotate(12deg);
+    }
+
+    .domain{
+      position:relative;
+      margin: 16px 0 8px;
+      font-size: clamp(34px, 5vw, 54px);
+      line-height:1.05;
+      letter-spacing: .2px;
+      font-weight: 800;
+      background: linear-gradient(90deg, rgba(234,240,255,.98), rgba(94,231,255,.95), rgba(139,92,255,.95));
+      -webkit-background-clip: text;
+      background-clip:text;
+      color: transparent;
+      text-shadow: 0 0 24px rgba(94,231,255,.10);
+    }
+    .sub{
+      position:relative;
+      margin: 0 0 18px;
+      color: rgba(154,164,178,.98);
+      font-size: 16px;
+      max-width: 62ch;
+    }
+
+    .ctaRow{
+      position:relative;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 12px;
+      margin: 18px 0 18px;
+    }
+
+    .btn{
+      appearance:none;
+      border:none;
+      cursor:pointer;
+      padding: 12px 16px;
+      border-radius: 14px;
+      font-family:inherit;
+      font-weight:700;
+      font-size: 15px;
+      transition: transform .15s ease, box-shadow .15s ease, background .2s ease, border-color .2s ease;
+      display:inline-flex;
+      align-items:center;
+      gap: 10px;
+      text-decoration:none;
+      user-select:none;
+      outline: none;
+    }
+    .btn:active{ transform: translateY(1px); }
+
+    .btnPrimary{
+      color:#071019;
+      background: linear-gradient(135deg, rgba(94,231,255,.95), rgba(50,255,154,.85));
+      box-shadow: 0 16px 34px rgba(94,231,255,.16);
+    }
+    .btnPrimary:hover{
+      box-shadow: 0 18px 44px rgba(94,231,255,.20);
+      transform: translateY(-1px);
+    }
+
+    .btnGhost{
+      color: rgba(234,240,255,.92);
+      background: rgba(255,255,255,.05);
+      border: 1px solid rgba(255,255,255,.12);
+      box-shadow: 0 12px 26px rgba(0,0,0,.25);
+    }
+    .btnGhost:hover{
+      background: rgba(255,255,255,.07);
+      border-color: rgba(255,255,255,.18);
+      transform: translateY(-1px);
+    }
+
+    .btnIcon{
+      width:18px; height:18px; display:inline-block;
+    }
+
+    .features{
+      position:relative;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 14px;
+    }
+    @media (max-width: 720px){
+      .features{ grid-template-columns: 1fr; }
+    }
+
+    .feat{
+      border: 1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding: 14px 12px;
+      min-height: 92px;
+    }
+    .feat b{ display:block; font-size: 14px; margin-bottom: 6px; }
+    .feat span{ color: var(--muted); font-size: 13px; line-height:1.5; }
+
+    /* Right card */
+    .side{
+      border-radius: var(--radius);
+      border: 1px solid var(--line);
+      background: rgba(11,16,32,.62);
+      backdrop-filter: blur(10px);
+      box-shadow: var(--shadow);
+      padding: 20px 18px;
+      position:relative;
+      overflow:hidden;
+    }
+    .side::before{
+      content:"";
+      position:absolute;
+      inset:-2px;
+      background: radial-gradient(400px 220px at 50% 0%, rgba(139,92,255,.18), transparent 58%);
+      opacity:.8;
+      pointer-events:none;
+    }
+
+    .cardTitle{
+      position:relative;
+      margin: 0 0 8px;
+      font-size: 16px;
+      font-weight:800;
+      letter-spacing:.2px;
+    }
+
+    .statGrid{
+      position:relative;
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 12px 0 14px;
+    }
+    .stat{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius: 16px;
+      padding: 14px 12px;
+    }
+    .stat .label{ color: var(--muted); font-size: 12px; }
+    .stat .value{ font-size: 18px; font-weight: 800; margin-top: 6px; }
+    .stat .hint{ color: rgba(154,164,178,.9); font-size: 12px; margin-top: 4px; }
+
+    .divider{
+      height:1px;
+      background: rgba(255,255,255,.10);
+      margin: 14px 0;
+      border-radius:999px;
+      position:relative;
+    }
+
+    .list{
+      position:relative;
+      margin: 0;
+      padding: 0;
+      list-style:none;
+      display:grid;
+      gap: 10px;
+    }
+    .list li{
+      border:1px solid rgba(255,255,255,.10);
+      background: rgba(255,255,255,.03);
+      border-radius: 14px;
+      padding: 12px 12px;
+      display:flex;
+      gap: 10px;
+      align-items:flex-start;
+    }
+    .badge{
+      flex: 0 0 auto;
+      width: 28px; height: 28px;
+      border-radius: 10px;
+      display:grid; place-items:center;
+      background: linear-gradient(135deg, rgba(94,231,255,.22), rgba(139,92,255,.22));
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow: 0 12px 26px rgba(0,0,0,.25);
+      margin-top: 1px;
+    }
+    .liText b{ display:block; font-size: 13px; }
+    .liText span{ display:block; color: var(--muted); font-size: 12px; margin-top: 2px; line-height:1.45; }
+
+    .footer{
+      grid-column: 1 / -1;
+      margin-top: 10px;
+      display:flex;
+      flex-wrap:wrap;
+      gap: 10px 14px;
+      align-items:center;
+      justify-content:space-between;
+      color: rgba(154,164,178,.9);
+      font-size: 12px;
+      padding: 10px 4px 0;
+    }
+    .footer a{
+      color: rgba(234,240,255,.85);
+      text-decoration:none;
+      border-bottom: 1px dashed rgba(234,240,255,.35);
+    }
+    .footer a:hover{ opacity:.9; }
+
+    /* Floating orb */
+    .orb{
+      position:absolute;
+      width: 220px; height: 220px;
+      border-radius: 999px;
+      right: -70px; top: -60px;
+      background:
+        radial-gradient(circle at 35% 35%, rgba(255,255,255,.65), rgba(255,255,255,0) 38%),
+        radial-gradient(circle at 50% 55%, rgba(94,231,255,.22), rgba(94,231,255,0) 60%),
+        radial-gradient(circle at 55% 35%, rgba(139,92,255,.18), rgba(139,92,255,0) 62%),
+        radial-gradient(circle at 45% 70%, rgba(50,255,154,.14), rgba(50,255,154,0) 60%);
+      filter: blur(.2px);
+      opacity:.75;
+      pointer-events:none;
+      animation: floaty 7s ease-in-out infinite;
+    }
+    @keyframes floaty{
+      0%,100%{ transform: translateY(0px); }
+      50%{ transform: translateY(10px); }
+    }
+
+    /* Small helper */
+    .mono{
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+      font-weight: 700;
+    }
+
+    /* Accessibility */
+    @media (prefers-reduced-motion: reduce){
+      .grid, .logo::after, .orb{ animation:none !important; }
+      .btn{ transition:none !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="grid" aria-hidden="true"></div>
+
+  <main class="wrap">
+    <section class="shell">
+
+      <header class="topbar">
+        <div class="brand">
+          <div class="logo" aria-hidden="true"></div>
+          <div>
+            <h1><span class="mono">egyptad.com</span></h1>
+            <p>Premium Domain • واضح • سهل • قوي في التسويق</p>
+          </div>
+        </div>
+
+        <div class="pill" title="Status">
+          <span class="dot" aria-hidden="true"></span>
+          متاح للتفاوض
+        </div>
+      </header>
+
+      <!-- HERO -->
+      <article class="hero">
+        <div class="orb" aria-hidden="true"></div>
+
+        <div class="kicker">
+          <span class="spark" aria-hidden="true"></span>
+          دومين قصير — سهل الحفظ — براند جاهز للإعلانات
+        </div>
+
+        <h2 class="domain">egyptad.com</h2>
+        <p class="sub">
+          لو بتبني وكالة إعلانات، منصة حملات، ماركت بليس، أو SaaS للـ Media Buying… الاسم ده
+          “مباشر” وبيشرح نفسه. مناسب B2B وB2C، وسهل يتقال ويتكتب.
+        </p>
+
+        <div class="ctaRow">
+          <a class="btn btnPrimary" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            <svg class="btnIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M12 3.2c-4.97 0-9 4.03-9 9 0 3.97 2.58 7.33 6.16 8.52.45.08.62-.2.62-.43 0-.22-.01-.95-.01-1.72-2.26.42-2.84-.55-3.02-1.06-.1-.26-.54-1.06-.92-1.27-.31-.17-.76-.6-.01-.61.7-.01 1.2.64 1.37.9.8 1.34 2.08.96 2.59.73.08-.58.31-.96.56-1.18-2-.23-4.08-1-4.08-4.43 0-.98.35-1.79.92-2.42-.09-.23-.4-1.16.09-2.42 0 0 .75-.24 2.46.92a8.4 8.4 0 0 1 2.24-.3c.76 0 1.52.1 2.24.3 1.71-1.16 2.46-.92 2.46-.92.49 1.26.18 2.19.09 2.42.57.63.92 1.43.92 2.42 0 3.44-2.09 4.2-4.08 4.43.32.28.6.81.6 1.64 0 1.18-.01 2.13-.01 2.43 0 .24.16.52.62.43A9.02 9.02 0 0 0 21 12.2c0-4.97-4.03-9-9-9Z" fill="currentColor" opacity=".95"/>
+            </svg>
+            تواصل / اشترِ الدومين
+          </a>
+
+          <a class="btn btnGhost" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            عرض تفاصيل أقوى
+            <svg class="btnIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M10 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+
+          <a class="btn btnGhost" href="https://github.com/" target="_blank" rel="noopener noreferrer">
+            احجزه الآن
+            <svg class="btnIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M13 6l5 6-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </a>
+        </div>
+
+        <div class="features">
+          <div class="feat">
+            <b>Brandable</b>
+            <span>اسم “مفهوم” من أول نظرة… مناسب لبراند إعلانات/تسويق داخل وخارج مصر.</span>
+          </div>
+          <div class="feat">
+            <b>Memorable</b>
+            <span>قصير، سهل النطق، وسهل يتكتب في الإعلان بدون أخطاء.</span>
+          </div>
+          <div class="feat">
+            <b>High Intent</b>
+            <span>كلمة “ad” مرتبطة مباشرة بالإعلانات والحملات—نية شراء/خدمة أعلى.</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- SIDE -->
+      <aside class="side">
+        <h3 class="cardTitle">ملخص سريع للمشتري</h3>
+
+        <div class="statGrid">
+          <div class="stat">
+            <div class="label">الدومين</div>
+            <div class="value mono">egyptad.com</div>
+            <div class="hint">Brand-ready</div>
+          </div>
+          <div class="stat">
+            <div class="label">الاستخدامات</div>
+            <div class="value">Agency / SaaS</div>
+            <div class="hint">B2B و B2C</div>
+          </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <ul class="list">
+          <li>
+            <div class="badge" aria-hidden="true">⚡</div>
+            <div class="liText">
+              <b>مناسب للإطلاق السريع</b>
+              <span>Landing + Funnel + Tracking بسهولة لأن الاسم واضح ومرتبط بمجال الإعلانات.</span>
+            </div>
+          </li>
+          <li>
+            <div class="badge" aria-hidden="true">🎯</div>
+            <div class="liText">
+              <b>قابل للتوسع عالميًا</b>
+              <span>“Egypt + Ad” تركيبة مفهومة للمصريين والأجانب—ممتازة للاستهداف الدولي.</span>
+            </div>
+          </li>
+          <li>
+            <div class="badge" aria-hidden="true">🛡️</div>
+            <div class="liText">
+              <b>شكل احترافي على الإيميل</b>
+              <span>support@egyptad.com / sales@egyptad.com — يعطي ثقة من أول رسالة.</span>
+            </div>
+          </li>
+        </ul>
+
+        <div class="divider"></div>
+
+        <a class="btn btnPrimary" href="https://github.com/" target="_blank" rel="noopener noreferrer" style="width:100%; justify-content:center;">
+          افتح صفحة التواصل الآن
+        </a>
+        <p style="margin:10px 0 0; color: var(--muted); font-size:12px; position:relative;">
+          * كل الأزرار تعمل Redirect إلى GitHub حسب طلبك.
+        </p>
+      </aside>
+
+      <footer class="footer">
+        <span>© <span id="y"></span> <span class="mono">egyptad.com</span> • Landing Page</span>
+        <span>
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub Redirect</a>
+          •
+          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Contact</a>
+        </span>
+      </footer>
+
+    </section>
+  </main>
+
+  <script>
+    // year
+    document.getElementById("y").textContent = new Date().getFullYear();
+
+    // Optional: make entire cards clickable without changing SEO/UX
+    // (kept minimal; all CTAs already redirect to GitHub)
+  </script>
+</body>
+</html>
+```
