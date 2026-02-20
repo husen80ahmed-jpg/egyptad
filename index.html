@@ -1,577 +1,544 @@
-
-```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="egyptad.com — Premium Domain For Sale" />
-  <title>egyptad.com — Domain For Sale</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <title>EgyptAd.com | أصل رقمي لقطاع الإعلانات في مصر</title>
+  <meta name="description" content="EgyptAd.com — أصل رقمي B2B مناسب لوكالات الإعلان (OOH & Digital)، ومنصات الوساطة الإعلانية، وحلول AdOps/قياس الحملات. فرصة شراكة أو استحواذ عبر Snap the Name." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://egyptad.com/" />
+  <link rel="icon" href="https://i.ibb.co/BHhQ5LHz/SNAP-THE-NAME.png" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="EgyptAd.com | أصل رقمي لقطاع الإعلانات في مصر" />
+  <meta property="og:description" content="واجهة قصيرة وسهلة التذكّر لقطاع الإعلانات. مناسبة لمنصة، دليل مزودين، أو بوابة RFQ، مع خيار شراكة أو استحواذ." />
+  <meta property="og:image" content="https://i.ibb.co/CpBJ3KYL/egyptad-com.jpg" />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://egyptad.com/" />
+
+  <!-- Fonts / Icons / Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Tajawal', 'sans-serif'] },
+          colors: {
+            brandGold: '#E5B80B',
+            brandDark: '#0A0A0A',
+            brandGray: '#171717',
+            accent: '#262626'
+          }
+        }
+      }
+    }
+  </script>
 
   <style>
-    :root{
-      --bg:#070A12;
-      --card:#0B1020;
-      --muted:#9AA4B2;
-      --text:#EAF0FF;
-      --line:rgba(255,255,255,.10);
-      --glow1:#5EE7FF;
-      --glow2:#8B5CFF;
-      --glow3:#32FF9A;
-      --shadow: 0 24px 60px rgba(0,0,0,.55);
-      --radius: 18px;
-    }
-
-    *{ box-sizing:border-box; }
-    html,body{ height:100%; }
-    body{
-      margin:0;
-      font-family:"Cairo", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
-      color:var(--text);
-      background:
-        radial-gradient(1200px 700px at 15% 10%, rgba(94,231,255,.18), transparent 55%),
-        radial-gradient(1100px 650px at 85% 20%, rgba(139,92,255,.18), transparent 55%),
-        radial-gradient(900px 550px at 50% 95%, rgba(50,255,154,.12), transparent 50%),
-        linear-gradient(180deg, #050813 0%, #070A12 45%, #05060B 100%);
-      overflow-x:hidden;
-    }
-
-    /* Subtle animated grid */
-    .grid{
-      position:fixed;
-      inset:-2px;
-      background:
-        linear-gradient(to right, rgba(255,255,255,.06) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,.06) 1px, transparent 1px);
-      background-size: 46px 46px;
-      mask-image: radial-gradient(900px 520px at 50% 22%, black 55%, transparent 100%);
-      opacity:.25;
-      pointer-events:none;
-      animation: drift 16s ease-in-out infinite;
-    }
-    @keyframes drift{
-      0%,100%{ transform: translate3d(0,0,0); }
-      50%{ transform: translate3d(12px, -10px, 0); }
-    }
-
-    .wrap{
-      position:relative;
-      min-height:100%;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      padding: 42px 18px 56px;
-    }
-
-    .shell{
-      width:min(1100px, 100%);
-      display:grid;
-      grid-template-columns: 1.15fr .85fr;
-      gap: 18px;
-      align-items:stretch;
-    }
-
-    @media (max-width: 980px){
-      .shell{ grid-template-columns: 1fr; }
-    }
-
-    /* Top bar */
-    .topbar{
-      grid-column: 1 / -1;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding: 14px 16px;
-      border:1px solid var(--line);
-      background: rgba(11,16,32,.62);
+    body { font-family: 'Tajawal', sans-serif; scroll-behavior: smooth; background-color: #0A0A0A; color: #e5e5e5; }
+    .glass-card {
+      background: linear-gradient(145deg, rgba(23,23,23,0.9), rgba(38,38,38,0.8));
       backdrop-filter: blur(10px);
-      border-radius: var(--radius);
-      box-shadow: 0 10px 28px rgba(0,0,0,.35);
+      border: 1px solid rgba(229, 184, 11, 0.18);
     }
-
-    .brand{
-      display:flex; align-items:center; gap:12px;
+    .hero-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 60vw;
+      height: 60vw;
+      background: radial-gradient(circle, rgba(229,184,11,0.10) 0%, rgba(10,10,10,0) 70%);
+      z-index: -1;
     }
-    .logo{
-      width:38px; height:38px; border-radius:12px;
-      background:
-        radial-gradient(18px 18px at 30% 30%, rgba(255,255,255,.9), rgba(255,255,255,0) 60%),
-        linear-gradient(135deg, rgba(94,231,255,.95), rgba(139,92,255,.95));
-      box-shadow: 0 10px 22px rgba(139,92,255,.25);
-      position:relative;
-      overflow:hidden;
+    .form-input {
+      width: 100%;
+      padding: 0.85rem 1.2rem;
+      background-color: #0A0A0A;
+      border: 1px solid #404040;
+      border-radius: 0.5rem;
+      color: #f3f4f6;
+      transition: all 0.3s;
     }
-    .logo::after{
-      content:"";
-      position:absolute; inset:-40%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,.55), transparent);
-      transform: rotate(25deg);
-      animation: shine 4.8s ease-in-out infinite;
-      opacity:.65;
-    }
-    @keyframes shine{
-      0%,25%{ transform: translateX(-60%) rotate(25deg); }
-      55%,100%{ transform: translateX(60%) rotate(25deg); }
-    }
-
-    .brand h1{
-      margin:0;
-      font-size: 18px;
-      letter-spacing:.2px;
-      line-height:1.1;
-    }
-    .brand p{
-      margin:0;
-      color:var(--muted);
-      font-size: 12px;
-      line-height:1.1;
-    }
-
-    .pill{
-      display:flex; align-items:center; gap:8px;
-      padding: 9px 12px;
-      border-radius: 999px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: rgba(234,240,255,.92);
-      font-size: 13px;
-      white-space:nowrap;
-    }
-    .dot{
-      width:10px; height:10px; border-radius:999px;
-      background: radial-gradient(circle at 35% 35%, rgba(255,255,255,.9), rgba(255,255,255,0) 60%),
-                  linear-gradient(180deg, var(--glow3), rgba(50,255,154,.25));
-      box-shadow: 0 0 18px rgba(50,255,154,.35);
-    }
-
-    /* Left hero card */
-    .hero{
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: rgba(11,16,32,.68);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      padding: 26px 22px;
-      position:relative;
-      overflow:hidden;
-    }
-    .hero::before{
-      content:"";
-      position:absolute; inset:-2px;
-      background:
-        radial-gradient(480px 220px at 20% 20%, rgba(94,231,255,.18), transparent 60%),
-        radial-gradient(520px 260px at 80% 35%, rgba(139,92,255,.16), transparent 62%),
-        radial-gradient(620px 320px at 50% 110%, rgba(50,255,154,.10), transparent 60%);
-      pointer-events:none;
-      opacity:.9;
-    }
-
-    .hero .kicker{
-      position:relative;
-      display:inline-flex;
-      align-items:center;
-      gap:10px;
-      padding: 8px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.04);
-      color: rgba(234,240,255,.92);
-      font-size: 13px;
-    }
-    .spark{
-      width:14px; height:14px; display:inline-block;
-      background: conic-gradient(from 180deg, var(--glow1), var(--glow2), var(--glow3), var(--glow1));
-      border-radius: 5px;
-      box-shadow: 0 0 16px rgba(94,231,255,.22);
-      transform: rotate(12deg);
-    }
-
-    .domain{
-      position:relative;
-      margin: 16px 0 8px;
-      font-size: clamp(34px, 5vw, 54px);
-      line-height:1.05;
-      letter-spacing: .2px;
-      font-weight: 800;
-      background: linear-gradient(90deg, rgba(234,240,255,.98), rgba(94,231,255,.95), rgba(139,92,255,.95));
-      -webkit-background-clip: text;
-      background-clip:text;
-      color: transparent;
-      text-shadow: 0 0 24px rgba(94,231,255,.10);
-    }
-    .sub{
-      position:relative;
-      margin: 0 0 18px;
-      color: rgba(154,164,178,.98);
-      font-size: 16px;
-      max-width: 62ch;
-    }
-
-    .ctaRow{
-      position:relative;
-      display:flex;
-      flex-wrap:wrap;
-      gap: 12px;
-      margin: 18px 0 18px;
-    }
-
-    .btn{
-      appearance:none;
-      border:none;
-      cursor:pointer;
-      padding: 12px 16px;
-      border-radius: 14px;
-      font-family:inherit;
-      font-weight:700;
-      font-size: 15px;
-      transition: transform .15s ease, box-shadow .15s ease, background .2s ease, border-color .2s ease;
-      display:inline-flex;
-      align-items:center;
-      gap: 10px;
-      text-decoration:none;
-      user-select:none;
+    .form-input:focus {
       outline: none;
-    }
-    .btn:active{ transform: translateY(1px); }
-
-    .btnPrimary{
-      color:#071019;
-      background: linear-gradient(135deg, rgba(94,231,255,.95), rgba(50,255,154,.85));
-      box-shadow: 0 16px 34px rgba(94,231,255,.16);
-    }
-    .btnPrimary:hover{
-      box-shadow: 0 18px 44px rgba(94,231,255,.20);
-      transform: translateY(-1px);
-    }
-
-    .btnGhost{
-      color: rgba(234,240,255,.92);
-      background: rgba(255,255,255,.05);
-      border: 1px solid rgba(255,255,255,.12);
-      box-shadow: 0 12px 26px rgba(0,0,0,.25);
-    }
-    .btnGhost:hover{
-      background: rgba(255,255,255,.07);
-      border-color: rgba(255,255,255,.18);
-      transform: translateY(-1px);
-    }
-
-    .btnIcon{
-      width:18px; height:18px; display:inline-block;
-    }
-
-    .features{
-      position:relative;
-      display:grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 12px;
-      margin-top: 14px;
-    }
-    @media (max-width: 720px){
-      .features{ grid-template-columns: 1fr; }
-    }
-
-    .feat{
-      border: 1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      border-radius: 16px;
-      padding: 14px 12px;
-      min-height: 92px;
-    }
-    .feat b{ display:block; font-size: 14px; margin-bottom: 6px; }
-    .feat span{ color: var(--muted); font-size: 13px; line-height:1.5; }
-
-    /* Right card */
-    .side{
-      border-radius: var(--radius);
-      border: 1px solid var(--line);
-      background: rgba(11,16,32,.62);
-      backdrop-filter: blur(10px);
-      box-shadow: var(--shadow);
-      padding: 20px 18px;
-      position:relative;
-      overflow:hidden;
-    }
-    .side::before{
-      content:"";
-      position:absolute;
-      inset:-2px;
-      background: radial-gradient(400px 220px at 50% 0%, rgba(139,92,255,.18), transparent 58%);
-      opacity:.8;
-      pointer-events:none;
-    }
-
-    .cardTitle{
-      position:relative;
-      margin: 0 0 8px;
-      font-size: 16px;
-      font-weight:800;
-      letter-spacing:.2px;
-    }
-
-    .statGrid{
-      position:relative;
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-      margin: 12px 0 14px;
-    }
-    .stat{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      border-radius: 16px;
-      padding: 14px 12px;
-    }
-    .stat .label{ color: var(--muted); font-size: 12px; }
-    .stat .value{ font-size: 18px; font-weight: 800; margin-top: 6px; }
-    .stat .hint{ color: rgba(154,164,178,.9); font-size: 12px; margin-top: 4px; }
-
-    .divider{
-      height:1px;
-      background: rgba(255,255,255,.10);
-      margin: 14px 0;
-      border-radius:999px;
-      position:relative;
-    }
-
-    .list{
-      position:relative;
-      margin: 0;
-      padding: 0;
-      list-style:none;
-      display:grid;
-      gap: 10px;
-    }
-    .list li{
-      border:1px solid rgba(255,255,255,.10);
-      background: rgba(255,255,255,.03);
-      border-radius: 14px;
-      padding: 12px 12px;
-      display:flex;
-      gap: 10px;
-      align-items:flex-start;
-    }
-    .badge{
-      flex: 0 0 auto;
-      width: 28px; height: 28px;
-      border-radius: 10px;
-      display:grid; place-items:center;
-      background: linear-gradient(135deg, rgba(94,231,255,.22), rgba(139,92,255,.22));
-      border:1px solid rgba(255,255,255,.12);
-      box-shadow: 0 12px 26px rgba(0,0,0,.25);
-      margin-top: 1px;
-    }
-    .liText b{ display:block; font-size: 13px; }
-    .liText span{ display:block; color: var(--muted); font-size: 12px; margin-top: 2px; line-height:1.45; }
-
-    .footer{
-      grid-column: 1 / -1;
-      margin-top: 10px;
-      display:flex;
-      flex-wrap:wrap;
-      gap: 10px 14px;
-      align-items:center;
-      justify-content:space-between;
-      color: rgba(154,164,178,.9);
-      font-size: 12px;
-      padding: 10px 4px 0;
-    }
-    .footer a{
-      color: rgba(234,240,255,.85);
-      text-decoration:none;
-      border-bottom: 1px dashed rgba(234,240,255,.35);
-    }
-    .footer a:hover{ opacity:.9; }
-
-    /* Floating orb */
-    .orb{
-      position:absolute;
-      width: 220px; height: 220px;
-      border-radius: 999px;
-      right: -70px; top: -60px;
-      background:
-        radial-gradient(circle at 35% 35%, rgba(255,255,255,.65), rgba(255,255,255,0) 38%),
-        radial-gradient(circle at 50% 55%, rgba(94,231,255,.22), rgba(94,231,255,0) 60%),
-        radial-gradient(circle at 55% 35%, rgba(139,92,255,.18), rgba(139,92,255,0) 62%),
-        radial-gradient(circle at 45% 70%, rgba(50,255,154,.14), rgba(50,255,154,0) 60%);
-      filter: blur(.2px);
-      opacity:.75;
-      pointer-events:none;
-      animation: floaty 7s ease-in-out infinite;
-    }
-    @keyframes floaty{
-      0%,100%{ transform: translateY(0px); }
-      50%{ transform: translateY(10px); }
-    }
-
-    /* Small helper */
-    .mono{
-      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      font-weight: 700;
-    }
-
-    /* Accessibility */
-    @media (prefers-reduced-motion: reduce){
-      .grid, .logo::after, .orb{ animation:none !important; }
-      .btn{ transition:none !important; }
+      border-color: #E5B80B;
+      box-shadow: 0 0 0 2px rgba(229, 184, 11, 0.2);
     }
   </style>
 </head>
 
-<body>
-  <div class="grid" aria-hidden="true"></div>
+<body class="antialiased selection:bg-brandGold selection:text-brandDark">
 
-  <main class="wrap">
-    <section class="shell">
+  <!-- Header -->
+  <header class="fixed w-full z-50 border-b border-white/10 bg-brandDark/90 backdrop-blur-md">
+    <div class="container mx-auto px-6 py-4 flex justify-between items-center">
 
-      <header class="topbar">
-        <div class="brand">
-          <div class="logo" aria-hidden="true"></div>
-          <div>
-            <h1><span class="mono">egyptad.com</span></h1>
-            <p>Premium Domain • واضح • سهل • قوي في التسويق</p>
-          </div>
-        </div>
-
-        <div class="pill" title="Status">
-          <span class="dot" aria-hidden="true"></span>
-          متاح للتفاوض
-        </div>
-      </header>
-
-      <!-- HERO -->
-      <article class="hero">
-        <div class="orb" aria-hidden="true"></div>
-
-        <div class="kicker">
-          <span class="spark" aria-hidden="true"></span>
-          دومين قصير — سهل الحفظ — براند جاهز للإعلانات
-        </div>
-
-        <h2 class="domain">egyptad.com</h2>
-        <p class="sub">
-          لو بتبني وكالة إعلانات، منصة حملات، ماركت بليس، أو SaaS للـ Media Buying… الاسم ده
-          “مباشر” وبيشرح نفسه. مناسب B2B وB2C، وسهل يتقال ويتكتب.
-        </p>
-
-        <div class="ctaRow">
-          <a class="btn btnPrimary" href="https://github.com/" target="_blank" rel="noopener noreferrer">
-            <svg class="btnIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M12 3.2c-4.97 0-9 4.03-9 9 0 3.97 2.58 7.33 6.16 8.52.45.08.62-.2.62-.43 0-.22-.01-.95-.01-1.72-2.26.42-2.84-.55-3.02-1.06-.1-.26-.54-1.06-.92-1.27-.31-.17-.76-.6-.01-.61.7-.01 1.2.64 1.37.9.8 1.34 2.08.96 2.59.73.08-.58.31-.96.56-1.18-2-.23-4.08-1-4.08-4.43 0-.98.35-1.79.92-2.42-.09-.23-.4-1.16.09-2.42 0 0 .75-.24 2.46.92a8.4 8.4 0 0 1 2.24-.3c.76 0 1.52.1 2.24.3 1.71-1.16 2.46-.92 2.46-.92.49 1.26.18 2.19.09 2.42.57.63.92 1.43.92 2.42 0 3.44-2.09 4.2-4.08 4.43.32.28.6.81.6 1.64 0 1.18-.01 2.13-.01 2.43 0 .24.16.52.62.43A9.02 9.02 0 0 0 21 12.2c0-4.97-4.03-9-9-9Z" fill="currentColor" opacity=".95"/>
-            </svg>
-            تواصل / اشترِ الدومين
-          </a>
-
-          <a class="btn btnGhost" href="https://github.com/" target="_blank" rel="noopener noreferrer">
-            عرض تفاصيل أقوى
-            <svg class="btnIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M10 7l5 5-5 5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-
-          <a class="btn btnGhost" href="https://github.com/" target="_blank" rel="noopener noreferrer">
-            احجزه الآن
-            <svg class="btnIcon" viewBox="0 0 24 24" fill="none" aria-hidden="true">
-              <path d="M6 12h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              <path d="M13 6l5 6-5 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-          </a>
-        </div>
-
-        <div class="features">
-          <div class="feat">
-            <b>Brandable</b>
-            <span>اسم “مفهوم” من أول نظرة… مناسب لبراند إعلانات/تسويق داخل وخارج مصر.</span>
-          </div>
-          <div class="feat">
-            <b>Memorable</b>
-            <span>قصير، سهل النطق، وسهل يتكتب في الإعلان بدون أخطاء.</span>
-          </div>
-          <div class="feat">
-            <b>High Intent</b>
-            <span>كلمة “ad” مرتبطة مباشرة بالإعلانات والحملات—نية شراء/خدمة أعلى.</span>
-          </div>
-        </div>
-      </article>
-
-      <!-- SIDE -->
-      <aside class="side">
-        <h3 class="cardTitle">ملخص سريع للمشتري</h3>
-
-        <div class="statGrid">
-          <div class="stat">
-            <div class="label">الدومين</div>
-            <div class="value mono">egyptad.com</div>
-            <div class="hint">Brand-ready</div>
-          </div>
-          <div class="stat">
-            <div class="label">الاستخدامات</div>
-            <div class="value">Agency / SaaS</div>
-            <div class="hint">B2B و B2C</div>
-          </div>
-        </div>
-
-        <div class="divider"></div>
-
-        <ul class="list">
-          <li>
-            <div class="badge" aria-hidden="true">⚡</div>
-            <div class="liText">
-              <b>مناسب للإطلاق السريع</b>
-              <span>Landing + Funnel + Tracking بسهولة لأن الاسم واضح ومرتبط بمجال الإعلانات.</span>
-            </div>
-          </li>
-          <li>
-            <div class="badge" aria-hidden="true">🎯</div>
-            <div class="liText">
-              <b>قابل للتوسع عالميًا</b>
-              <span>“Egypt + Ad” تركيبة مفهومة للمصريين والأجانب—ممتازة للاستهداف الدولي.</span>
-            </div>
-          </li>
-          <li>
-            <div class="badge" aria-hidden="true">🛡️</div>
-            <div class="liText">
-              <b>شكل احترافي على الإيميل</b>
-              <span>support@egyptad.com / sales@egyptad.com — يعطي ثقة من أول رسالة.</span>
-            </div>
-          </li>
-        </ul>
-
-        <div class="divider"></div>
-
-        <a class="btn btnPrimary" href="https://github.com/" target="_blank" rel="noopener noreferrer" style="width:100%; justify-content:center;">
-          افتح صفحة التواصل الآن
+      <div class="flex items-center gap-4">
+        <a href="#top" aria-label="Snap the Name">
+          <img src="https://i.ibb.co/BHhQ5LHz/SNAP-THE-NAME.png" alt="Snap the Name" class="h-16 md:h-24 object-contain drop-shadow-[0_0_15px_rgba(229,184,11,0.2)]">
         </a>
-        <p style="margin:10px 0 0; color: var(--muted); font-size:12px; position:relative;">
-          * كل الأزرار تعمل Redirect إلى GitHub حسب طلبك.
+
+        <div class="hidden sm:flex flex-col">
+          <span class="text-3xl md:text-4xl font-black text-white tracking-widest uppercase font-sans leading-none" dir="ltr">
+            SNAP <span class="text-brandGold">THE NAME</span>
+          </span>
+          <span class="text-sm text-brandGold/80 tracking-widest font-sans uppercase mt-1" dir="ltr">Premium Digital Assets</span>
+        </div>
+      </div>
+
+      <div class="hidden lg:flex gap-6 items-center">
+        <a href="mailto:hussein.lashin@snapthename.com" class="text-gray-400 hover:text-white transition font-sans text-sm" dir="ltr">
+          hussein.lashin@snapthename.com
+        </a>
+        <a id="waHeaderBtn" href="#" target="_blank" rel="noopener noreferrer"
+           class="bg-brandGold text-brandDark px-6 py-2.5 rounded-full font-bold hover:bg-white transition duration-300 flex items-center gap-2 shadow-[0_0_15px_rgba(229,184,11,0.3)]">
+          <i class="fab fa-whatsapp text-xl"></i>
+          <span dir="ltr" class="font-sans tracking-wider">+20 100 000 1802</span>
+        </a>
+      </div>
+
+      <!-- Mobile quick actions -->
+      <div class="flex lg:hidden items-center gap-3">
+        <a id="waMobileTop" href="#" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp"
+           class="bg-green-600/20 border border-green-500/30 text-green-400 px-3 py-2 rounded-full hover:bg-green-600/30 transition">
+          <i class="fab fa-whatsapp text-xl"></i>
+        </a>
+        <a href="#pitch-deck" class="bg-brandGold/15 border border-brandGold/30 text-brandGold px-3 py-2 rounded-full hover:bg-brandGold/20 transition" aria-label="Request Pitch Deck">
+          <i class="fas fa-file-lines"></i>
+        </a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- Floating WhatsApp button (mobile) -->
+  <a id="waFloating"
+     href="#"
+     target="_blank"
+     rel="noopener noreferrer"
+     class="fixed z-50 bottom-5 left-5 lg:hidden bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-[0_10px_30px_rgba(34,197,94,0.25)] hover:scale-105 transition"
+     aria-label="WhatsApp">
+    <i class="fab fa-whatsapp text-3xl"></i>
+  </a>
+
+  <!-- Hero -->
+  <section id="top" class="relative min-h-screen flex items-center pt-32 pb-20 overflow-hidden">
+    <div class="hero-glow"></div>
+
+    <div class="container mx-auto px-6 relative z-10">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+
+        <div>
+          <div class="inline-block mb-6 px-5 py-2 border border-brandGold/40 bg-brandGold/10 rounded-full">
+            <span class="text-brandGold font-bold tracking-wide text-sm flex items-center gap-2">
+              <i class="fas fa-crown"></i>
+              أصل رقمي B2B — مناسب لوكالات الإعلان ومنصات OOH & Digital
+            </span>
+          </div>
+
+          <h1 class="text-5xl md:text-7xl font-black text-white mb-6 leading-tight">
+            عنوان يختصر <br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-brandGold to-yellow-200" dir="ltr">قطاع الإعلانات في مصر</span>
+          </h1>
+
+          <p class="text-xl text-gray-400 mb-6 leading-relaxed">
+            <strong class="text-white">egyptad.com</strong> واجهة قصيرة وسهلة التذكّر لقطاع الإعلانات.
+            تصلح كمنصة تشغيل (Marketplace/Directory/RFQ) أو كعنوان براند رئيسي يرفع الثقة ويقلّل الاحتكاك في التقديم والعروض والتواصل.
+          </p>
+
+          <div class="glass-card p-5 rounded-2xl mb-8">
+            <p class="text-gray-300 leading-relaxed text-sm">
+              <span class="text-brandGold font-bold">ملاحظة تنفيذية:</span>
+              تأثير الدومين لا يأتي وحده من “الحروف”، بل من وضوح التموضع + المنتج/المحتوى + التوزيع. الاسم القوي يساعد… لكنه ليس بديلًا عن التشغيل.
+            </p>
+          </div>
+
+          <div class="flex flex-col sm:flex-row gap-4 mt-6">
+            <a href="#pitch-deck" class="bg-brandGold text-brandDark px-8 py-4 rounded-lg font-black text-lg hover:bg-yellow-400 transition duration-300 shadow-[0_0_20px_rgba(229,184,11,0.35)] flex justify-center items-center gap-3">
+              <i class="fas fa-file-pdf text-xl"></i>
+              طلب Pitch Deck للإدارة
+            </a>
+            <a href="#use-cases" class="px-8 py-4 rounded-lg font-bold text-lg text-white border border-gray-600 hover:border-brandGold hover:text-brandGold transition duration-300 flex justify-center items-center">
+              حالات استخدام واضحة
+            </a>
+          </div>
+        </div>
+
+        <div class="relative group">
+          <div class="absolute -inset-1 bg-gradient-to-r from-brandGold to-yellow-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-700"></div>
+
+          <img src="https://i.ibb.co/CpBJ3KYL/egyptad-com.jpg"
+               alt="EgyptAd.com Premium Domain"
+               class="relative w-full rounded-2xl shadow-2xl border border-white/10 transform transition duration-500 hover:scale-[1.02] object-cover">
+
+          <div class="absolute -bottom-6 -left-6 bg-brandDark border border-brandGold/50 p-4 rounded-xl shadow-2xl flex items-center gap-4">
+            <div class="bg-brandGold/20 p-3 rounded-full text-brandGold">
+              <i class="fas fa-layer-group text-2xl"></i>
+            </div>
+            <div>
+              <p class="text-xs text-gray-400 mb-1">تصنيف الاستخدام</p>
+              <p class="text-xl font-black text-white">Advertising / AdOps / OOH</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Use cases -->
+  <section id="use-cases" class="py-24 bg-brandGray border-y border-white/5">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-6">ثلاث حالات استخدام “تبيع” للإدارة</h2>
+        <p class="text-gray-400 text-lg">
+          بدل الكلام العام… دي 3 نماذج تشغيل تجعل الاسم أصلًا منتجًا قابلًا للقياس.
         </p>
-      </aside>
+      </div>
 
-      <footer class="footer">
-        <span>© <span id="y"></span> <span class="mono">egyptad.com</span> • Landing Page</span>
-        <span>
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">GitHub Redirect</a>
-          •
-          <a href="https://github.com/" target="_blank" rel="noopener noreferrer">Contact</a>
-        </span>
-      </footer>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
 
-    </section>
-  </main>
+        <div class="glass-card p-8 rounded-2xl hover:border-brandGold transition duration-300">
+          <i class="fas fa-store text-4xl text-brandGold mb-6"></i>
+          <h3 class="text-2xl font-black text-white mb-3">Marketplace لمساحات الإعلان</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            عرض مخزون OOH + شاشات + حلول رقمية، مع نموذج تسعير/حجز/طلب عرض. مناسب لشركة تشغيل أو شبكة وساطة.
+          </p>
+        </div>
 
+        <div class="glass-card p-8 rounded-2xl hover:border-brandGold transition duration-300">
+          <i class="fas fa-list-check text-4xl text-brandGold mb-6"></i>
+          <h3 class="text-2xl font-black text-white mb-3">Directory + RFQ Lead Engine</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            دليل مزوّدي خدمات (Digital / OOH / Production) + طلب عروض موحّد للشركات. يحوّل الزيارات إلى فرص بيع مباشرة.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl hover:border-brandGold transition duration-300">
+          <i class="fas fa-gauge-high text-4xl text-brandGold mb-6"></i>
+          <h3 class="text-2xl font-black text-white mb-3">AdOps Hub (تشغيل وقياس)</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            بوابة تقارير + قياس + نماذج UTM + توثيق عمليات الحملات. مناسبة لوكالات enterprise أو مزوّد أدوات.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats / Proof (clean, less hype) -->
+  <section id="stats" class="py-24 bg-brandDark">
+    <div class="container mx-auto px-6">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-6">لماذا قد تهتم الإدارة باسم كهذا؟</h2>
+        <p class="text-gray-400 text-lg">
+          لأن الاسم الواضح يقلّل الاحتكاك في التسويق والمبيعات… ويقوّي الذاكرة والثقة. الأثر النهائي يعتمد على التشغيل.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+
+        <div class="glass-card p-8 rounded-2xl hover:border-brandGold transition duration-300">
+          <i class="fas fa-bolt text-4xl text-brandGold mb-6"></i>
+          <h3 class="text-2xl font-black text-white mb-2">تقليل الاحتكاك</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            عنوان قصير وواضح يساعد فرق المبيعات والتقديم والعروض (Decks/Email/Proposals) ويقلّل أخطاء الكتابة والالتباس.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl hover:border-brandGold transition duration-300">
+          <i class="fas fa-shield-halved text-4xl text-brandGold mb-6"></i>
+          <h3 class="text-2xl font-black text-white mb-2">ثقة “Top-of-mind”</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            اسم فئوي (Category) يوصل رسالة: “نحن داخل قلب القطاع”. مفيد للـOOH، الوكالات، والشبكات الإعلانية.
+          </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-2xl hover:border-brandGold transition duration-300">
+          <i class="fas fa-diagram-project text-4xl text-brandGold mb-6"></i>
+          <h3 class="text-2xl font-black text-white mb-2">قابلية التحويل لمنتج</h3>
+          <p class="text-gray-400 text-sm leading-relaxed">
+            الاسم يصلح كبوابة تشغيل (Marketplace/Directory/RFQ) وليس مجرد لافتة. هذا ما يرفع القيمة فعليًا.
+          </p>
+        </div>
+
+      </div>
+
+      <!-- Sources note (optional) -->
+      <div class="mt-12 max-w-4xl mx-auto glass-card p-6 rounded-2xl">
+        <p class="text-gray-300 text-sm leading-relaxed">
+          <span class="text-brandGold font-bold">تنبيه مهني:</span>
+          أي أرقام سوق/إنفاق يجب أن تُذكر بمصدر واضح وتاريخ محدد (تقرير/جهة بحثية) قبل إرسالها للإدارة العليا.
+          إن رغبت، أضيف قسم “Sources” بالروابط بعد ما تحدد الأرقام الصحيحة التي تريد اعتمادها.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Collaboration options -->
+  <section class="py-24 bg-brandGray border-y border-white/5">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="bg-gradient-to-br from-brandGray to-brandDark border border-brandGold/30 rounded-3xl p-8 md:p-14 shadow-2xl text-center">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-10">خيارات التعاون المتاحة للإدارة</h2>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-10 text-right">
+
+          <div class="p-8 border border-white/10 rounded-2xl bg-brandDark/50 hover:bg-brandGray transition">
+            <div class="w-16 h-16 bg-brandGold/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-project-diagram text-3xl text-brandGold"></i>
+            </div>
+            <h3 class="text-2xl font-black text-white mb-4">شراكة تشغيل (Joint Venture)</h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              ندخل بأصل رقمي (egyptad.com) + جاهزية للـ landing / positioning،
+              وأنتم تتولّون التشغيل والتطوير. نموذج مناسب لمنصة أو شبكة إعلانات تريد إطلاقًا سريعًا.
+            </p>
+          </div>
+
+          <div class="p-8 border border-white/10 rounded-2xl bg-brandDark/50 hover:bg-brandGray transition">
+            <div class="w-16 h-16 bg-brandGold/10 rounded-full flex items-center justify-center mb-6">
+              <i class="fas fa-file-signature text-3xl text-brandGold"></i>
+            </div>
+            <h3 class="text-2xl font-black text-white mb-4">استحواذ كامل (Outright Buy-out)</h3>
+            <p class="text-gray-400 leading-relaxed mb-6">
+              نقل ملكية آمن عبر Escrow. مناسب لمن يريد امتلاك عنوان فئوي واضح داخل مصر وتثبيته كأصل ضمن محفظة العلامة.
+            </p>
+          </div>
+
+        </div>
+
+        <p class="text-gray-500 text-xs mt-8">
+          *هذه الصفحة عرض تعريفي لأصل رقمي. غير تابعة لأي جهة أو علامة أخرى. التقييم/الشروط تُناقش مع الإدارة المعنية.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pitch deck request -->
+  <section id="pitch-deck" class="py-24 bg-brandDark relative">
+    <div class="container mx-auto px-6 max-w-6xl">
+      <div class="text-center mb-16">
+        <h2 class="text-3xl md:text-5xl font-black text-white mb-4">اطلب الملف الاستثماري (Pitch Deck)</h2>
+        <p class="text-xl text-gray-400">اختر الوسيلة الأنسب. الأفضل: بريد عمل رسمي (Corporate Email).</p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+
+        <!-- WhatsApp -->
+        <div class="bg-brandGray p-8 md:p-10 rounded-2xl border border-brandGold/30 shadow-2xl flex flex-col justify-center text-center hover:border-brandGold transition duration-300">
+          <div class="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i class="fab fa-whatsapp text-5xl text-green-500"></i>
+          </div>
+          <h3 class="text-2xl font-black text-white mb-4">طلب سريع عبر واتساب</h3>
+          <p class="text-gray-400 mb-8 leading-relaxed">
+            رسالة قصيرة توصل طلبك للإدارة مباشرة (بدون تفاصيل حساسة). ثم نستكمل رسميًا عبر البريد.
+          </p>
+
+          <a id="waPitchBtn" href="#" target="_blank" rel="noopener noreferrer"
+             class="w-full bg-green-600 text-white py-4 rounded-lg font-bold text-lg hover:bg-green-500 transition duration-300 shadow-[0_0_15px_rgba(34,197,94,0.25)] flex justify-center items-center gap-3 mt-auto">
+            <i class="fab fa-whatsapp text-2xl"></i>
+            <span>طلب Pitch Deck عبر واتساب</span>
+          </a>
+        </div>
+
+        <!-- Email form (WORKING via Formspree) -->
+        <div class="bg-brandGray p-8 md:p-10 rounded-2xl border border-white/10 shadow-2xl relative">
+          <h3 class="text-2xl font-black text-white mb-2 flex items-center gap-3">
+            <i class="fas fa-envelope-open-text text-brandGold"></i> طلب رسمي عبر الإيميل
+          </h3>
+          <p class="text-gray-400 mb-6 text-sm">
+            ✅ هذا النموذج “يعمل فعلاً” عبر Formspree. فقط استبدل <span class="text-brandGold font-bold">YOUR_FORM_ID</span> بالمعرّف الخاص بك.
+          </p>
+
+          <div id="formStatus" class="hidden mb-5 rounded-xl border border-white/10 bg-brandDark/50 p-4 text-sm"></div>
+
+          <form id="pitchDeckForm"
+                action="https://formspree.io/f/YOUR_FORM_ID"
+                method="POST"
+                accept-charset="UTF-8"
+                class="space-y-4">
+
+            <div>
+              <label class="block text-gray-300 text-sm font-bold mb-2">اسم الممثل / الإدارة *</label>
+              <input name="name" type="text" required class="form-input" placeholder="أدخل اسمك الكريم">
+            </div>
+
+            <div>
+              <label class="block text-gray-300 text-sm font-bold mb-2">الكيان المؤسسي / الوكالة *</label>
+              <input name="company" type="text" required class="form-input" placeholder="اسم الشركة">
+            </div>
+
+            <div>
+              <label class="block text-gray-300 text-sm font-bold mb-2">المسمّى الوظيفي *</label>
+              <input name="title" type="text" required class="form-input" placeholder="CEO / CMO / Head of Media / BD">
+            </div>
+
+            <div>
+              <label class="block text-gray-300 text-sm font-bold mb-2">بريد العمل (Corporate Email) *</label>
+              <input name="email" type="email" required class="form-input text-right" placeholder="name@company.com" dir="ltr">
+            </div>
+
+            <div>
+              <label class="block text-gray-300 text-sm font-bold mb-2">ملاحظة (اختياري)</label>
+              <textarea name="message" rows="3" class="form-input" placeholder="مثال: نفضل الاستحواذ / نفضّل شراكة تشغيل / موعد مناسب لمكالمة"></textarea>
+            </div>
+
+            <!-- Optional meta -->
+            <input type="hidden" name="domain" value="egyptad.com">
+            <input type="hidden" name="request" value="Pitch Deck Request">
+
+            <button id="submitBtn" type="submit"
+                    class="w-full bg-brandGold text-brandDark py-4 rounded-lg font-bold text-lg hover:bg-yellow-500 transition duration-300 shadow-[0_0_15px_rgba(229,184,11,0.2)] flex justify-center items-center gap-3">
+              <i class="fas fa-paper-plane"></i>
+              <span>إرسال الطلب للإدارة</span>
+            </button>
+
+            <p class="text-xs text-gray-500 leading-relaxed mt-3">
+              بإرسالك الطلب، أنت توافق على تواصلنا معك لغرض مشاركة Pitch Deck فقط. لا نقوم بإضافة البريد لقوائم تسويقية.
+            </p>
+          </form>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-brandDark pt-16 pb-8 border-t border-white/10">
+    <div class="container mx-auto px-6">
+
+      <div class="flex flex-col md:flex-row justify-between items-center gap-10 mb-12">
+
+        <div class="text-center md:text-right">
+          <h4 class="text-2xl font-black text-white mb-6">قنوات التواصل</h4>
+
+          <div class="space-y-4 text-gray-400">
+            <div class="flex items-center justify-center md:justify-start gap-3">
+              <i class="fas fa-building text-brandGold text-xl w-6"></i>
+              <span class="text-lg font-bold">Snap the Name — أصول رقمية B2B</span>
+            </div>
+
+            <div class="flex items-center justify-center md:justify-start gap-3 mt-4">
+              <a href="mailto:hussein.lashin@snapthename.com"
+                 class="hover:text-brandGold transition font-sans flex items-center gap-2" dir="ltr">
+                <i class="fas fa-envelope text-brandGold text-lg"></i>
+                hussein.lashin@snapthename.com
+              </a>
+            </div>
+
+            <div class="flex items-center justify-center md:justify-start gap-3">
+              <a id="waFooterBtn" href="#" target="_blank" rel="noopener noreferrer"
+                 class="hover:text-brandGold transition font-sans flex items-center gap-2 font-bold" dir="ltr">
+                <i class="fab fa-whatsapp text-brandGold text-xl"></i>
+                +20 100 000 1802
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-center md:text-left flex flex-col items-center md:items-end">
+          <img src="https://i.ibb.co/BHhQ5LHz/SNAP-THE-NAME.png" alt="Snap the Name" class="h-28 opacity-90 mb-4 drop-shadow-[0_0_10px_rgba(229,184,11,0.2)]">
+          <p class="text-gray-500 text-sm max-w-sm text-center md:text-left leading-relaxed">
+            نحن ندير ونسوّق أصولًا رقمية استراتيجية (Premium B2B Domains) مع تركيز على حالات استخدام واضحة قبل أي عرض.
+          </p>
+        </div>
+
+      </div>
+
+      <div class="text-center border-t border-white/10 pt-8 text-gray-600 text-sm font-sans" dir="ltr">
+        &copy; 2026 Snap the Name. All rights reserved. Strategic Digital Assets.
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- Scripts: WhatsApp encoding + Form submit UX -->
   <script>
-    // year
-    document.getElementById("y").textContent = new Date().getFullYear();
+    // ===== 1) WhatsApp link with proper encoding =====
+    const WA_NUMBER = "201000001802";
 
-    // Optional: make entire cards clickable without changing SEO/UX
-    // (kept minimal; all CTAs already redirect to GitHub)
+    const waMessageHeader =
+      "مرحباً، أود التوجيه لجهة القرار المختصة بالأصول الرقمية/الدومينات لديكم. لدينا أصل رقمي مناسب لقطاع الإعلانات: egyptad.com. هل يمكن توجيهي للشخص/القسم المناسب؟";
+
+    const waMessagePitch =
+      "مرحباً إدارة Snap the Name، بصفتي ممثلاً عن جهة تعمل في الإعلانات، أود طلب Pitch Deck الخاص بـ egyptad.com لمناقشة خيار شراكة تشغيل أو استحواذ.";
+
+    function buildWaLink(msg) {
+      return `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`;
+    }
+
+    const waHeaderBtn = document.getElementById("waHeaderBtn");
+    const waMobileTop = document.getElementById("waMobileTop");
+    const waFloating = document.getElementById("waFloating");
+    const waPitchBtn = document.getElementById("waPitchBtn");
+    const waFooterBtn = document.getElementById("waFooterBtn");
+
+    [waHeaderBtn, waMobileTop, waFloating, waFooterBtn].forEach(el => {
+      if (el) el.href = buildWaLink(waMessageHeader);
+    });
+    if (waPitchBtn) waPitchBtn.href = buildWaLink(waMessagePitch);
+
+    // ===== 2) Formspree submit without fake alert =====
+    const form = document.getElementById("pitchDeckForm");
+    const statusBox = document.getElementById("formStatus");
+    const submitBtn = document.getElementById("submitBtn");
+
+    function showStatus(type, text) {
+      statusBox.classList.remove("hidden");
+      statusBox.innerHTML = text;
+      statusBox.classList.remove("text-green-300", "text-red-300", "border-green-500/30", "border-red-500/30");
+      statusBox.classList.add(type === "ok" ? "text-green-300" : "text-red-300");
+      statusBox.classList.add(type === "ok" ? "border-green-500/30" : "border-red-500/30");
+    }
+
+    if (form) {
+      form.addEventListener("submit", async (e) => {
+        e.preventDefault();
+
+        // IMPORTANT:
+        // Replace YOUR_FORM_ID in the form action with your real Formspree form ID.
+        // Example: https://formspree.io/f/abcdwxyz
+        const endpoint = form.action;
+
+        try {
+          submitBtn.disabled = true;
+          submitBtn.classList.add("opacity-70");
+
+          const formData = new FormData(form);
+          const res = await fetch(endpoint, {
+            method: "POST",
+            body: formData,
+            headers: { "Accept": "application/json" }
+          });
+
+          if (res.ok) {
+            showStatus(
+              "ok",
+              "تم إرسال طلبك بنجاح ✅<br/>لو لم يصلك رد خلال 24–48 ساعة عمل، تواصل معنا عبر واتساب مع ذكر اسم شركتك."
+            );
+            form.reset();
+          } else {
+            showStatus(
+              "err",
+              "تعذر إرسال الطلب الآن. فضلاً تأكد من إعداد Formspree (YOUR_FORM_ID) أو تواصل عبر واتساب مباشرة."
+            );
+          }
+        } catch (err) {
+          showStatus(
+            "err",
+            "حدث خطأ في الاتصال. جرّب مرة أخرى أو استخدم واتساب."
+          );
+        } finally {
+          submitBtn.disabled = false;
+          submitBtn.classList.remove("opacity-70");
+        }
+      });
+    }
   </script>
+
 </body>
 </html>
-```
